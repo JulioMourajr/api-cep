@@ -62,3 +62,21 @@ spec:
   owner: group:default/team-cep
   dependencyOf:
     -component:default/api-cep
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: api-ce
+  description: API externa para consulta de CEP, utilizada pela API de CEP
+  tags:
+    - rest
+    - openapi
+    - cep  
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: user:default/guest
+  system: api-cep
+  definition: 
+    $text: ./openapi.yaml
