@@ -25,9 +25,40 @@ metadata:
     - url: http://localhost:8000/docs
       title: Swagger UI (FastAPI)
       icon: docs
+    - url: https://viacep.com.br
+      title: ViaCEP (Serviço Externo de Consulta de CEP)
+      icon: web
+      type: external depedency
 spec:
   type: service
   lifecycle: experimental
-  owner: user:default/guest
+  owner: user:default/team-cep
   providesApis:
     - api-cep
+  dependsOn:
+    - resource:default/viacep-api
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: viacep-api
+  description: API externa para consulta de CEP, utilizada pela API de CEP
+  tags:
+    - api
+    - external
+    - python  
+
+  links:
+    - url: https://viacep.com.br
+      title: ViaCEP (Serviço Externo de Consulta de CEP)
+      icon: web
+      type: external depedency
+    - url: https://viacep.com.br/ws/57040000/json/
+      title: Exemplo de Consulta (ViaCEP)
+      icon: docs
+spec:
+  type: external-api
+  owner: group:default/team-cep
+  dependencyOf:
+    -component:default/api-cep
