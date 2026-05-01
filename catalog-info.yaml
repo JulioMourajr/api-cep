@@ -1,3 +1,17 @@
+---
+# Grupo responsável pela API de CEP
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-cep
+  description: Time responsável pelo desenvolvimento e manutenção da API de consulta de CEP
+spec:
+  type: team
+  profile:
+    displayName: Time CEP
+    email: team-cep@email.com
+  children: []
+---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
@@ -32,9 +46,9 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: user:default/team-cep
+  owner: group:default/team-cep
   providesApis:
-    - api-cep
+    - api-ce
   dependsOn:
     - resource:default/viacep-api
 ---
