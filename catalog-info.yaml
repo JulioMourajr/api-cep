@@ -81,7 +81,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: api-ce
+  name: api-cep
   description: API externa para consulta de CEP, utilizada pela API de CEP
   tags:
     - rest
