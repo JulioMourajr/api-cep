@@ -75,7 +75,7 @@ spec:
   type: external-api
   owner: group:default/team-cep
   dependencyOf:
-    -component:default/api-cep
+    - component:default/api-cep
 ---
 
 apiVersion: backstage.io/v1alpha1
